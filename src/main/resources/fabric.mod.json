@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "chatter",
+  "version": "${version}",
+  "name": "Chatter",
+  "description": "Hypixel Skyblock Mod for 1.21.1",
+  "authors": ["Your Name"],
+  "contact": {},
+  "license": "CC0-1.0",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "com.chatter.Chatter"
+      }
+    ],
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "com.chatter.ChatterClient"
+      }
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.5",
+    "fabric-language-kotlin": ">=1.12.1+kotlin.2.0.20",
+    "minecraft": "~1.21.1",
+    "java": ">=21"
+  }
+}
