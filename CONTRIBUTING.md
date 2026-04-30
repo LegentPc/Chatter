@@ -4,19 +4,19 @@
 
 ### Version-Safe Code Rules
 
-- **Version-Safe Code**: Code likho jo current aur modern versions dono par compatible ho  
+- **Version-Safe Code**: Write code that is compatible with both current and modern versions.
 - **API Compatibility**: Sirf wahi APIs use karo jo sabhi versions mein available hain  
-- **Conditional Logic**: Version-specific code ke liye proper checks lagao  
+- **Conditional Logic**: Apply proper checks for version-specific code.
 - **No Hardcoded Versions**: Version numbers directly code mein mat likho  
 
 ## Language & Style Guidelines
 
 ### Kotlin & Java
 
-- Project Kotlin aur Java dono use karta hai  
-- Kotlin coding conventions follow karo (official Kotlin style guide)  
-- Clean, readable code likho  
-- Proper comments add karo  
+- The project uses both Kotlin and Java.
+- Follow Kotlin coding conventions (official Kotlin style guide).
+- Write clean, readable code.
+- Add proper comments.
 
 ### Project Structure
 
@@ -41,41 +41,41 @@ src/
 
 ## Important Notes
 
-- **Auto-download**: Dependencies automatically download hote hain jab pehli baar project import karo  
-- **Debugging**: Live debugging ke liye IDE setup zaroori hai  
+- **Auto-download**: Dependencies are downloaded automatically when you import the project for the first time.
+- **Debugging**: IDE setup required for live debugging
+
+---
+
+## Testing
+
+- Please test your features thoroughly before submitting a PR!
+- Screenshots or showcases would also accelerate the review process of your PR and are strongly suggested.
+- Please note clearly in the PR if it has not been tested.
+- PR Title and Description should be as per the template 
+
+- Unit tests are also strongly encouraged. Note that you can create unit tests for methods containing Minecraft classes. See ItemUtilsTest for an example.
+
+- Thank you for contributing to Chatter, and hope you have fun!
 
 ---
 
 ## Rules (Mandatory)
 
-Please read and follow all rules strictly before contributing.
+#### Please read and follow all rules strictly before contributing.
 
 1. Read the `CONTRIBUTING.md` file before making any changes.  
-2. Do not use `@Suppress` in code.  
-3. Use `private` wherever possible (e.g., `private val`, `private fun`). Avoid unnecessary public access.  
-4. When sharing code, always include proper line references.  
-5. Code should look human-written. Avoid patterns that clearly look AI-generated.  
-6. Keep code simple and readable.  
-7. When suggesting replacements:
-   - Mention exact line numbers  
-   - Mention file name above the code  
-   - No need for line numbers in new files  
-8. Clearly mention:
-   - What existed before  
-   - What has been changed  
-   - If replacement fails, include surrounding lines  
-9. Do not perform or suggest actions like push, pull, or PR.  
-10. Do not use comments (`//`) inside code when sharing it.  
-11. All dependencies must use stable releases.  
-   - If stable is not available, then beta/alpha of the same version can be used.  
+2. Do not use `@Suppress` in code:
+   - Use @Suppress only where it is necessary.
+3. Use `private` wherever possible (e.g., `private val`, `private fun`):
+   - Avoid unnecessary public access.
+   - Sometimes feature not work if you use private val, private fun.
+4. Keep code simple and readable.
+5. Take proper time. Do not rush. Quality matters.
+6. Do not use //TODO in code:
+   - Use TODO only when it is absolutely necessary.
+7. Code must not contain warnings (including yellow warnings):
+   - There may be some warnings
+8. Avoid temporary or hacky solutions. Create proper structure and files when needed.
+9. All dependencies must use stable releases:
+   - If stable is not available, then beta/alpha of the same version can be used.
    - If I tell you to do this, then do it, only this time you can break the rules.
-12. Code must not contain warnings (including yellow warnings).  
-13. Take proper time. Do not rush. Quality matters.  
-14. Avoid temporary or hacky solutions. Create proper files and structure when needed.  
-15. Code must not contain typos.  
-16. Always provide full file paths (e.g., `src/main/java/...`).  
-17. Provide all related code and changes together.  
-18. Before implementing any feature/fix/improvement:
-   - Review at least 4–5 similar files in the project  
-   - Then provide the final code  
-   
