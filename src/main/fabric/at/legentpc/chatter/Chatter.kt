@@ -1,6 +1,6 @@
-package at.LegentPc.Chatter
+package at.legentpc.chatter
 
-import at.LegentPc.Chatter.config.ChatterConfigManager
+import at.legentpc.chatter.config.ChatterConfigManager
 import net.fabricmc.api.ModInitializer
 import org.slf4j.LoggerFactory
 

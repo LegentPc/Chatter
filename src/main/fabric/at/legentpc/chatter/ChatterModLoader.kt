@@ -1,6 +1,6 @@
-package at.LegentPc.Chatter
+package at.legentpc.chatter
 
-import at.LegentPc.Chatter.config.ConfigGuiManager
+import at.legentpc.chatter.config.ConfigGuiManager
 import com.mojang.brigadier.builder.LiteralArgumentBuilder
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback

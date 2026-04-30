@@ -4,7 +4,7 @@ plugins {
     kotlin("jvm") version "2.3.21"
 }
 
-version = project.properties["mod_version"] as String
+version = "${project.properties["mod_version"]}-mc${project.properties["minecraft_version"]}"
 group = project.properties["maven_group"] as String
 
 base {
@@ -35,11 +35,11 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_version"]}")
     modImplementation("net.fabricmc:fabric-language-kotlin:${project.properties["fabric_kotlin_version"]}")
 
-    shadowModImpl("org.notenoughupdates.moulconfig:modern-1.21.1:${project.properties["moulconfig_version"]}") {
+    shadowModImpl("org.notenoughupdates.moulconfig:modern-1.21.11:${project.properties["moulconfig_version"]}") {
         exclude("org.jetbrains.kotlin")
         exclude("org.jetbrains.kotlinx")
     }
-    include("org.notenoughupdates.moulconfig:modern-1.21.1:${project.properties["moulconfig_version"]}")
+    include("org.notenoughupdates.moulconfig:modern-1.21.11:${project.properties["moulconfig_version"]}")
 }
 
 tasks {
@@ -52,6 +52,7 @@ tasks {
 
     shadowJar {
         archiveClassifier.set("all-dev")
+        destinationDirectory.set(layout.buildDirectory.dir("devlibs"))
         configurations = listOf(shadowModImpl)
         relocate("io.github.notenoughupdates.moulconfig", "at.LegentPc.Chatter.deps.moulconfig")
     }

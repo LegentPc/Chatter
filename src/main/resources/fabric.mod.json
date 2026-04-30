@@ -12,13 +12,13 @@
     "main": [
       {
         "adapter": "kotlin",
-        "value": "at.LegentPc.Chatter.Chatter"
+        "value": "at.legentpc.chatter.Chatter"
       }
     ],
     "client": [
       {
         "adapter": "kotlin",
-        "value": "at.LegentPc.Chatter.ChatterModLoader"
+        "value": "at.legentpc.chatter.ChatterModLoader"
       }
     ]
   },

@@ -1,10 +1,11 @@
-package at.LegentPc.Chatter.config
+package at.legentpc.chatter.config
 
+import io.github.notenoughupdates.moulconfig.Config
 import io.github.notenoughupdates.moulconfig.annotations.Category
 import io.github.notenoughupdates.moulconfig.annotations.ConfigEditorBoolean
 import io.github.notenoughupdates.moulconfig.annotations.ConfigOption
 
-class ChatterConfig {
+class ChatterConfig : Config() {
 
     @Category(name = "General", desc = "General Settings")
     var general: GeneralConfig = GeneralConfig()
