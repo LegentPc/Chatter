@@ -1,6 +1,5 @@
 package at.legentpc.chatter.config
 
-import at.LegentPc.Chatter.config.ChatterConfig
 import io.github.notenoughupdates.moulconfig.managed.ManagedConfig
 import net.fabricmc.loader.api.FabricLoader
 import java.io.File

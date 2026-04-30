@@ -12,7 +12,6 @@ object Chatter : ModInitializer {
     lateinit var configManager: ChatterConfigManager
 
     override fun onInitialize() {
-        configManager = ChatterConfigManager()
         logger.info("Chatter initialized")
     }
 }

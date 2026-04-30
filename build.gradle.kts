@@ -1,6 +1,5 @@
 plugins {
     id("fabric-loom") version "1.15-SNAPSHOT"
-    id("com.gradleup.shadow") version "9.3.1"
     kotlin("jvm") version "2.3.21"
 }
 
@@ -9,10 +8,6 @@ group = project.properties["maven_group"] as String
 
 base {
     archivesName.set(project.properties["archives_base_name"] as String)
-}
-
-val shadowModImpl: Configuration by configurations.creating {
-    configurations.modImplementation.get().extendsFrom(this)
 }
 
 sourceSets {
@@ -35,10 +30,7 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_version"]}")
     modImplementation("net.fabricmc:fabric-language-kotlin:${project.properties["fabric_kotlin_version"]}")
 
-    shadowModImpl("org.notenoughupdates.moulconfig:modern-1.21.11:${project.properties["moulconfig_version"]}") {
-        exclude("org.jetbrains.kotlin")
-        exclude("org.jetbrains.kotlinx")
-    }
+    modImplementation("org.notenoughupdates.moulconfig:modern-1.21.11:${project.properties["moulconfig_version"]}")
     include("org.notenoughupdates.moulconfig:modern-1.21.11:${project.properties["moulconfig_version"]}")
 }
 
@@ -48,18 +40,6 @@ tasks {
         filesMatching("fabric.mod.json") {
             expand("version" to project.version)
         }
-    }
-
-    shadowJar {
-        archiveClassifier.set("all-dev")
-        destinationDirectory.set(layout.buildDirectory.dir("devlibs"))
-        configurations = listOf(shadowModImpl)
-        relocate("io.github.notenoughupdates.moulconfig", "at.LegentPc.Chatter.deps.moulconfig")
-    }
-
-    named<net.fabricmc.loom.task.RemapJarTask>("remapJar") {
-        dependsOn(shadowJar)
-        inputFile.set(shadowJar.get().archiveFile)
     }
 
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {

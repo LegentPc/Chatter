@@ -1,5 +1,6 @@
 package at.legentpc.chatter
 
+import at.legentpc.chatter.config.ChatterConfigManager
 import at.legentpc.chatter.config.ConfigGuiManager
 import com.mojang.brigadier.builder.LiteralArgumentBuilder
 import net.fabricmc.api.ClientModInitializer
@@ -10,6 +11,7 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents
 object ChatterModLoader : ClientModInitializer {
 
     override fun onInitializeClient() {
+        Chatter.configManager = ChatterConfigManager()
         registerCommands()
         registerShutdownHook()
     }
